@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BBQ baptist church</title>
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+<style type="text/css">
+	body{
+		background: black;
+	}
+	h1{
+		color: #a35046;
+		background: black;
+		padding: 1vw;
+	}
+	iframe{
+		margin-top: -1vw;
+       width: 100vw;
+       height: 50vw;
+	}
+	#blog{
+		background: white;
+		margin: 4vw;
+		padding: 1vw;
+		border-radius: 1vw;
+	}
+	h3{
+		color: #a35046;
+	}
+	#contact-form{
+     background: white;
+		margin: 4vw;
+		padding: 1vw;
+		border-radius: 1vw;
+		width: fit-content;
+	}
+	input{
+		width: 40vw;
+	}
+	textarea{
+		width: 40vw;
+		height: 20vw;
+	}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_FucESlOGT4h6bsiPh88CB");
+})();
+</script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+<h1 class="text-center" >BBQ baptist church</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hoqTc5IKkU0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="blog">
+	<h3>Why I read the KJV</h3>
+	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+</div>
+<center>
+<form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <br>
+        <label>Name</label>
+        <br>
+        <input type="text" name="user_name">
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="email" name="user_email">
+        <br>
+        <label>Message</label>
+        <br>
+        <textarea name="message"></textarea>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+    </center>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>
