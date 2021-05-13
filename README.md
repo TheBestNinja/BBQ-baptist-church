@@ -1,2 +1,2 @@
 # BBQ-baptist-church
-This is a sit for our church
+This is a site for our church
